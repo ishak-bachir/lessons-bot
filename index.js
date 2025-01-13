@@ -20,14 +20,18 @@ import {
 } from "@discordjs/builders";
 import express from  "express";
 dotenv.config();
+
 const app = express();
-var listenir = app.listen(2000,()=>console.log(`listening at port: ${listenir.adress().port}`));
-app.listen(()=>{
-  console.log("ready to work 24h!");
-})
-app.get("/",(req,res)=>{
-  res.send("<body><center><h1>bot ready 24h</h1></center></body>")
-})
+
+// بدء الخادم
+const listener = app.listen(2000, () => {
+  console.log(`Listening at port: ${listener.address().port}`);
+});
+
+// معالجة المسار الرئيسي
+app.get("/", (req, res) => {
+  res.send("<body><center><h1>Bot ready 24h</h1></center></body>");
+});
 // التحقق من المتغيرات
 const { TOKEN, CLIENT_ID, GUILD_ID, DB, adminRole } = process.env;
 if (!TOKEN || !CLIENT_ID || !GUILD_ID || !DB) {
