@@ -25,7 +25,7 @@ var listenir = app.listen(2000,()=>console.log(`listening at port: ${listenir.ad
 app.listen(()=>{
   console.log("ready to work 24h!");
 })
-app.get("/"(req,res)=>{
+app.get("/",(req,res)=>{
   res.send("<body><center><h1>bot ready 24h</h1></center></body>")
 })
 // التحقق من المتغيرات
